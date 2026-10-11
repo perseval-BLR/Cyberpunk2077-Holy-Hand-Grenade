@@ -1,0 +1,9 @@
+# Holy Hand Grenade for Cyberpunk 2077 v1.0.0 - fan-made, non-commercial. See README / CREDITS.
+# The "Hallelujah" of the Holy Hand Grenade - the sound from the Worms series (c) Team17 Digital Ltd, a non-commercial
+# fan tribute (see CREDITS). Played by the CET part through Audioware two seconds before the blast.
+version: 1.0.0
+sfx:
+  holygrenade_hallelujah:
+    file: hallelujah.wav
+    settings:
+      volume: 0.7

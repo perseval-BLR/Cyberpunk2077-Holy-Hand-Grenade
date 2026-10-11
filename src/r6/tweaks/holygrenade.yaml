@@ -1,0 +1,36 @@
+# Holy Hand Grenade for Cyberpunk 2077 v1.0.0 - fan-made, non-commercial. See README / CREDITS.
+# The Holy Hand Grenade: a throwing knife underneath (Items.Preset_Knife_Default). Its look comes from
+# HolyHandGrenade.archive (ArchiveXL resource patches add the appearance "holygrenade", tagged HolyGrenade, to the
+# knife's appearance files). The Cyber Engine Tweaks part (mods/holygrenade) gives it, flies it and sets it off.
+Items.HolyHandGrenade:
+  $base: Items.Preset_Knife_Default
+  visualTags: [HolyGrenade]
+  displayName: LocKey#holygrenade-name
+  localizedDescription: LocKey#holygrenade-desc
+  statPools: [HolyGrenade.ThrowRecovery]
+  iconPath: holygrenade_icon
+  icon: UIIcon.holygrenade_icon
+
+UIIcon.holygrenade_icon:
+  $type: gamedataUIIcon_Record
+  atlasResourcePath: holygrenade\icon\holygrenade_icon.inkatlas
+  atlasPartName: holygrenade
+
+# the throw cooldown: the knife's pool regenerates 1 point a second over 0..100; this one 40 (the CET part also fills
+# it a second after the throw)
+HolyGrenade.ThrowRecoveryRegen:
+  $base: BaseStatPools.KnifeReloadRegen
+  valuePerSec: 40
+
+HolyGrenade.ThrowRecovery:
+  $base: BaseStatPools.ThrowRecovery
+  regen: HolyGrenade.ThrowRecoveryRegen
+
+# the explosion: the frag grenade's game effect, 19 m instead of 3.2, not flagged as a weak explosion; vehicles take the
+# frag grenade's own damage (the CET part sets them off one by one - all at once froze the game)
+HolyGrenade.Explosion:
+  $base: Attacks.CommonFragGrenade
+  range: 19
+  explosionDamageVSVehicles: 600
+  hitReactionSeverityMin: 3
+  hitFlags: [Explosion, DetonateGrenades, FragGrenade]

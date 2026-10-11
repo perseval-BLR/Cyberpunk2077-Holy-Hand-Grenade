@@ -1,0 +1,11 @@
+# Holy Hand Grenade for Cyberpunk 2077 v1.0.0 - fan-made, non-commercial. See README / CREDITS.
+resource:
+  patch:
+    holygrenade\patch\knife_main.app:
+      - base\weapons\melee\knife\basic\w_knife_appearances.app
+    holygrenade\patch\knife_grip.app:
+      - base\weapons\melee\knife\basic\appearances\w_knife_common_grip.app
+localization:
+  onscreens:
+    ru-ru: holygrenade\localization\ru-ru.json
+    en-us: holygrenade\localization\en-us.json
